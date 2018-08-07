@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.pubbix.feature.home.profile.viewmodel.EditProfileViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Adding 3 rows of placeholders -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/edit_profile_placeholder"/>
+
+                <include layout="@layout/edit_profile_placeholder"/>
+
+                <include layout="@layout/edit_profile_placeholder"/>
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:onClick="@{viewModel.profileImageClicked}"
+            android:padding="@dimen/default_brick_content_padding"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/profile_circular_border_imageview"
+                android:src="@{viewModel.profileImage}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/auguste"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/circular_bold"
+                android:text="Profile Photo"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/profile_image"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{viewModel.fullNameClicked}"
+            android:orientation="horizontal"
+            android:padding="@dimen/default_brick_content_padding">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/default_brick_content_padding"
+                android:src="@drawable/ic_person_black_24dp"
+                android:tint="@color/pubbixMainColor"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="24dp"
+                android:paddingStart="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/circular_bold"
+                    android:text="@string/name"
+                    android:textSize="16sp"
+                    tools:text="Name"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.fullName}"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="Auguste Compaore"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{viewModel.emailClicked}"
+            android:orientation="horizontal"
+            android:padding="@dimen/default_brick_content_padding">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/default_brick_content_padding"
+                android:src="@drawable/ic_email_black_24dp"
+                android:tint="@color/pubbixMainColor"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="24dp"
+                android:paddingStart="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/circular_bold"
+                    android:text="Email"
+                    android:textSize="16sp"/>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.email}"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="comauguste@gmail.com"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{viewModel.phoneNumbeClicked}"
+            android:orientation="horizontal"
+            android:padding="@dimen/default_brick_content_padding">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/default_brick_content_padding"
+                android:src="@drawable/ic_phone_iphone_black_24dp"
+                android:tint="@color/pubbixMainColor"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="24dp"
+                android:paddingStart="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/circular_bold"
+                    android:text="Phone"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.phone}"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="+19573122323"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{viewModel.genderClicked}"
+            android:orientation="horizontal"
+            android:padding="@dimen/default_brick_content_padding">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/default_brick_content_padding"
+                android:src="@drawable/ic_gender_black_24"
+                android:tint="@color/pubbixMainColor"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="24dp"
+                android:paddingStart="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/circular_bold"
+                    android:text="@string/gender"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.gender}"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="@string/man"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{viewModel.locationClicked}"
+            android:orientation="horizontal"
+            android:padding="@dimen/default_brick_content_padding">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/default_brick_content_padding"
+                android:src="@drawable/ic_my_location_black_24dp"
+                android:tint="@color/pubbixMainColor"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="24dp"
+                android:paddingStart="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/circular_bold"
+                    android:text="@string/location"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.location}"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="Burkina Faso"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{viewModel.birthdayClicked}"
+            android:orientation="horizontal"
+            android:padding="@dimen/default_brick_content_padding">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/default_brick_content_padding"
+                android:src="@drawable/ic_cake_black_24dp"
+                android:tint="@color/pubbixMainColor"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="24dp"
+                android:paddingStart="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/circular_bold"
+                    android:text="@string/birthday"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.birthday}"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="12/12/2018"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{viewModel.bioDescriptionClicked}"
+            android:orientation="horizontal"
+            android:padding="@dimen/default_brick_content_padding">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/default_brick_content_padding"
+                android:src="@drawable/ic_resume_black_24"
+                android:tint="@color/pubbixMainColor"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingEnd="24dp"
+                android:paddingStart="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/circular_bold"
+                    android:text="@string/biography"
+                    android:textSize="16sp"
+                    tools:text="Biography"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

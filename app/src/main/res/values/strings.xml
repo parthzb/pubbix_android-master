@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">Pubbix</string>
+    <string name="facebook_app_id">232436187322750</string>
+    <string name="fb_login_protocol_scheme">fb232436187322750</string>
+    <string name="account_kit_client_token">c407412540fa5c6f2d3119a3e785b9b0</string>
+    <string name="ak_login_protocol_scheme">ak232436187322750</string>
+    <string name="google_service_api_key">AIzaSyBb7dodTIxXMCRm2hFkKsVC70Fc2u6oxE4</string>
+
+    <!-- Notification -->
+    <string name="notifications_admin_channel_name">Global channel</string>
+    <string name="notifications_admin_channel_description">Notifications sent from the app admin</string>
+
+    <string name="default_media_location_folder">guslists</string>
+    <string name="permissions_get_accounts_message">
+        Grant permission to read your email address from your device to pre-fill.
+    </string>
+    <string name="permissions_get_accounts_title">Read Email Address</string>
+    <string name="permissions_read_phone_state_message">
+        Grant permission to read your phone number from your device to pre-fill.
+    </string>
+    <string name="permissions_read_phone_state_title">Read Phone Number</string>
+    <string name="permissions_receive_sms_message">
+        Grant permission to read your SMS code from your device to pre-fill.
+    </string>
+    <string name="permissions_receive_sms_title">Read SMS Code</string>
+    <string name="log_in_email_button">Log In via Email</string>
+    <string name="log_in_phone_button">Log In via Phone</string>
+    <string name="log_out_button">Log Out</string>
+    <string name="error_label">Error</string>
+    <string name="loading_placeholder">Loading&#8230;</string>
+    <string name="user_id_label">Account ID</string>
+    <string name="phone_number_label">Phone Number</string>
+    <string name="email_label">Email</string>
+    <string name="na">NA</string>
+    <string name="pubbix">Pubbix</string>
+    <string name="authenticate">AUTHENTICATE</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="skip_to_homepage">HOMEPAGE</string>
+    <string name="pubbix_slogan">Your social ads platform !</string>
+    <string name="usage_terms_and_conditions">By logging in, you agree to our terms of use and our privacy policy.</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_action_ok">OK</string>
+    <string name="dialog_action_cancel">Cancel</string>
+    <string name="dialog_error_title">Sorry</string>
+    <string name="login_via_facebook">Log in via facebook</string>
+    <string name="login_authenticate_text">Authenticate</string>
+    <string name="logout">Logout</string>
+    <string name="login_via_facebook_cancelled">Authentication via facebook was cancelled</string>
+    <string name="user_not_found_based_on_provided_information">We could not find an account related to the provided information</string>
+    <string name="first_let_s_get_some_details_about_you">First, let\'s get some details about you !</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="account_created_with_provided_information">An account was created with provided information</string>
+    <string name="user_default_full_name">Howdy, Stranger!</string>
+    <string name="view_and_edit_profile">View and edit profile</string>
+    <string name="mission_statement">Pubbix’s vision is to be the most innovating social ads platform in Africa where our customers both promote their services and find the best deals locally. Therefore, we strive to offer an innovating and personalized social ads experience that uniquely connects people to their interests, and businesses to their customers.</string>
+    <string name="new_listing">New Listing</string>
+    <string name="expiringListings">Expiring Listings</string>
+    <string name="expiredListing">Expired Listing</string>
+    <string name="chatMessages">Chat Messages</string>
+
+    <string name="description">
+		Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
+	</string>
+    <string name="save">Save</string>
+    <string name="sign_in_to_unlock_features">Sign Me In</string>
+    <string name="create_account">Create an account</string>
+    <string name="sold">Sold</string>
+    <string name="name">Name</string>
+    <string name="gender">Gender</string>
+    <string name="man">Man</string>
+    <string name="location">Location</string>
+    <string name="birthday">Birthday</string>
+    <string name="biography">Biography</string>
+    <string name="account_information_update_success">Account information updated Successfully</string>
+    <string name="lorem_lipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+</resources>

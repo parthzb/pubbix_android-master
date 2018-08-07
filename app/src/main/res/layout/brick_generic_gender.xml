@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.pubbix.feature.home.profile.viewmodel.GenericEditViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_brick_content_padding">
+
+        <TextView
+            android:id="@+id/genderTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="I am "
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/circular_bold"
+            android:text="@={viewModel.genderText}"
+            android:textColor="@color/pubbixMainColor"
+            android:textSize="18sp"
+            tools:text="a man"
+            app:layout_constraintStart_toEndOf="@+id/genderTextview"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:onCheckedChanged="@{viewModel.onSplitTypeChanged}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gender">
+
+            <RadioButton
+                android:id="@+id/man"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/selector_standing_man"
+                android:checked="@{viewModel.man}"
+                />
+
+            <RadioButton
+                android:id="@+id/woman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/selector_standing_woman"
+                android:checked="@{viewModel.woman}"
+                />
+
+        </RadioGroup>
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/pubbixMainColor"
+            android:onClick="@{viewModel.saveButtonClicked}"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="@{viewModel.save}"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:cornerRadius="@dimen/button_corner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            tools:text="@string/save"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

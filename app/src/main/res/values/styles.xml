@@ -1,0 +1,112 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <style name="PubbixMainTheme" parent="PubbixParentTheme">
+        <!-- Customise your style here for devices below API 21 -->
+
+
+    </style>
+    <!-- Base application theme. -->
+    <style name="PubbixParentTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Parent theme for all Pre-lollipop and Lollipop above versions. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/pubbixMainColor</item>
+        <item name="android:itemTextAppearance">@color/primaryColor</item>
+        <item name="android:fontFamily">@font/brown_regular</item>
+        <item name="android:colorControlHighlight">@color/pubbixMainColor</item>
+        <item name="preferenceTheme">@style/PubbixMainTheme</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+        <item name="android:datePickerMode">spinner</item>
+        <!--<item name="android:windowTranslucentStatus">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>-->
+        <!--<item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>-->
+    </style>
+
+    <!-- OnBoarding Actvity theme. -->
+    <style name="OnboardingTheme" parent="Theme.AppCompat.Light">
+        <!-- Parent theme for all Pre-lollipop and Lollipop above versions. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/pubbixMainColor</item>
+        <item name="android:itemTextAppearance">@color/primaryColor</item>
+        <item name="android:fontFamily">@font/brown_regular</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="bottomNavigationTheme" parent="Widget.Design.BottomNavigationView">
+        <item name="colorPrimary">@color/pubbixMainColor</item>
+    </style>
+
+    <!-- Base application theme No Action Bar -->
+    <style name="SuperMaterialThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Parent theme for all Pre-lollipop and Lollipop above versions. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/primaryLightColor</item>
+        <item name="colorControlNormal">@color/pubbixMainColor</item>
+        <item name="android:textColorPrimary">@color/pubbixMainColor</item>
+    </style>
+
+    <!-- Facebook Account Kit theme. -->
+    <style name="AppLoginTheme" parent="Theme.AccountKit" >
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="LoginCustomTheme" parent="Theme.AccountKit">
+        <!-- IMAGEM  DE BACKGROUND -->
+        <!--<item name="com_accountkit_background">@drawable/background</item>-->
+        <!-- COR DE BACKGROUND, CASO NÃO DEFINA AO MENOS TRANSPARENTE, A IMAGEM NÃO APARECERÁ -->
+        <item name="com_accountkit_background_color">@color/white</item>
+
+        <!-- COR DA TOOLBAR -->
+        <item name="com_accountkit_primary_color">@color/primaryColor</item>
+
+        <!-- COR DO TEXTO DA TOOLBAR -->
+        <item name="com_accountkit_primary_text_color">@color/light_bg_dark_primary_text</item>
+
+        <!-- COR DOS TEXTOS INFORMATIVOS -->
+        <item name="com_accountkit_secondary_text_color">@color/light_bg_dark_secondary_text</item>
+
+        <!-- COR DA STATUS BAR -->
+        <item name="com_accountkit_status_bar_color">@color/primaryDarkColor</item>
+
+        <!-- COR DE BACKGROUND DAS VIEWS DE ENTRADA DE DADOS -->
+        <item name="com_accountkit_input_background_color">@color/orange_100</item>
+
+        <!-- COR DOS TEXTOS DAS VIEWS DE ENTRADA DE DADOS -->
+        <item name="com_accountkit_input_text_color">@color/light_bg_dark_primary_text</item>
+
+        <!-- COR DE BACKGROUND DOS BUTTONS -->
+        <item name="com_accountkit_button_background_color">@color/primaryColor</item>
+
+        <!-- COR DOS TEXTOS DOS BUTTONS -->
+        <item name="com_accountkit_button_text_color">@color/white</item>
+    </style>
+
+    <style name="Guslists.Matisse.Zhihu" parent="Matisse.Zhihu">
+        <!-- Parent theme for all Pre-lollipop and Lollipop above versions. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/primaryLightColor</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/background_splash</item>
+        <item name="colorPrimaryDark">@color/primaryColor</item>
+    </style>
+
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">@color/primaryLightColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/material_text_subhead</item>
+    </style>
+
+    <style name="ToolbarStyle" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!-- Customize color of navigation drawer icon and back arrow -->
+        <item name="colorControlNormal">@color/primaryColor</item>
+    </style>
+
+</resources>

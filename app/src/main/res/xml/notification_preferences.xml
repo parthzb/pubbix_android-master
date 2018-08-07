@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Account Notification">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="newListing"
+            android:title="@string/new_listing"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="expiringListing"
+            android:title="@string/expiringListings"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="expiredListing"
+            android:title="@string/expiredListing"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="chatMessages"
+            android:title="@string/chatMessages"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Additional Notification">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="key4"
+            android:title="Promotions &amp; Deal of the Day"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="key5"
+            android:title="Deal of the Day"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="key6"
+            android:title="Tips"/>
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

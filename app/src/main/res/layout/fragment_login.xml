@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.pubbix.feature.onboarding.login.viewmodel.LoginViewModel"/>
+    </data>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@drawable/ic_close_black_24dp"
+            android:onClick="@{viewModel.onHomepageButtonClicked}"
+            android:tint="@color/pubbixMainColor"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/spacing_normal"
+            android:src="@mipmap/app_logo"/>
+
+        <TextView
+            android:id="@+id/slogan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.companySlogan}"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/spacing_normal"
+            android:layout_marginBottom="@dimen/spacing_normal"
+            tools:text="@string/pubbix_slogan"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/spacing_normal">
+            <View
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"/>
+
+            <TextView
+                android:id="@+id/authenticate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="@{viewModel.authenticateText}"
+                android:textAlignment="center"
+                android:textSize="@dimen/material_text_subhead"
+                tools:text="Authenticate"/>
+
+            <View
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="24dp"
+            android:paddingRight="24dp"
+            android:paddingEnd="24dp"
+            android:paddingLeft="24dp"
+            android:orientation="vertical">
+            <android.support.design.button.MaterialButton
+                android:id="@+id/btn_fb_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.loginByFacebookText}"
+                tools:text="@string/login_via_facebook"
+                android:textColor="@color/com_facebook_blue"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:layout_gravity="center_horizontal"
+                app:cornerRadius="@dimen/button_corner"
+                app:strokeColor="@color/com_facebook_blue"
+                app:strokeWidth="@dimen/spacing_stroke"
+                app:icon="@mipmap/facebook_circled_55"
+                app:iconTint="@color/com_facebook_blue"
+                app:additionalPaddingLeftForIcon="8dp"
+                app:backgroundTint="@color/white"
+                app:rippleColor="@color/com_facebook_blue"
+                android:onClick="@{viewModel.onLoginWithFacebookClicked}"
+                />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/btn_login_via_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@{viewModel.accountKitLoginByPhoneText}"
+                tools:text="@string/log_in_phone_button"
+                android:textColor="@color/accountKitLoginViaPhone"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:cornerRadius="@dimen/button_corner"
+                app:strokeColor="@color/accountKitLoginViaPhone"
+                app:strokeWidth="@dimen/spacing_stroke"
+                app:icon="@mipmap/login_via_phone_45"
+                app:iconTint="@color/accountKitLoginViaPhone"
+                app:additionalPaddingLeftForIcon="8dp"
+                app:backgroundTint="@color/white"
+                app:rippleColor="@color/accountKitLoginViaPhone"
+                android:onClick="@{viewModel.onAccountKitLoginByPhoneClicked}"
+                />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/btn_login_via_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal"
+                android:text="@{viewModel.accountKitLoginByEmailText}"
+                tools:text="@string/log_in_phone_button"
+                android:textColor="@color/accountKitLoginViaEmail"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:cornerRadius="@dimen/button_corner"
+                app:strokeColor="@color/accountKitLoginViaEmail"
+                app:strokeWidth="@dimen/spacing_stroke"
+                app:icon="@mipmap/login_via_email_45"
+                app:iconTint="@color/accountKitLoginViaEmail"
+                app:additionalPaddingLeftForIcon="8dp"
+                app:backgroundTint="@color/white"
+                app:rippleColor="@color/accountKitLoginViaEmail"
+                android:onClick="@{viewModel.onAccountKitLoginByEmailClicked}"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/spacing_normal">
+            <View
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"/>
+
+            <TextView
+                android:id="@+id/register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="@{viewModel.orRegisterText}"
+                android:textAlignment="center"
+                android:textSize="@dimen/material_text_subhead"
+                tools:text="Create an account"/>
+
+            <View
+                android:layout_width="80dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"/>
+        </LinearLayout>
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/btn_user_registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/white"
+            android:text="@{viewModel.signUpButtonText}"
+            tools:text="@string/sign_up"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            app:cornerRadius="@dimen/button_corner"
+            app:strokeColor="@color/accountKitLoginViaEmail"
+            android:backgroundTint="@color/pubbixMainColor"
+            android:onClick="@{viewModel.onSignUpButtonClicked}"
+            />
+
+        <TextView
+            android:id="@+id/terms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_normal"
+            android:textSize="@dimen/material_text_subhead"
+            android:text="@{viewModel.termsAndConditionsText}"
+            android:textAlignment="center"
+            android:fontFamily="@font/circular_book"
+            tools:text="@string/usage_terms_and_conditions"/>
+
+    </LinearLayout>
+
+</layout>

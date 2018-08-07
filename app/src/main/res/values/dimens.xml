@@ -1,0 +1,51 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="tab_max_width">264dp</dimen>
+    <dimen name="tab_padding_bottom">16dp</dimen>
+    <dimen name="tab_label">14sp</dimen>
+    <dimen name="custom_tab_layout_height">72dp</dimen>
+
+    <!-- standard metrics -->
+    <dimen name="spacing_stroke">2dp</dimen>
+    <dimen name="spacing_normal">8dp</dimen>
+    <dimen name="spacing_micro">4dp</dimen>
+    <dimen name="spacing_large">32dp</dimen>
+    <dimen name="spacing_xlarge">48dp</dimen>
+    <dimen name="spacing_huge">64dp</dimen>
+    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+
+    <dimen name="grid_expected_size">120dp</dimen>
+    <dimen name="item_margin_horizontal">24dp</dimen>
+    <dimen name="item_margin_vertical">8dp</dimen>
+
+    <dimen name="material_text_button">14sp</dimen>
+    <dimen name="material_text_menu">14sp</dimen>
+    <dimen name="material_text_caption">12sp</dimen>
+    <dimen name="material_text_body1">14sp</dimen>
+    <dimen name="material_text_body2">13sp</dimen>
+    <dimen name="material_text_subhead">16sp</dimen>
+    <dimen name="material_text_title">20sp</dimen>
+    <dimen name="material_text_headline">24sp</dimen>
+    <dimen name="material_text_display1">34sp</dimen>
+    <dimen name="material_text_display2">45sp</dimen>
+    <dimen name="material_text_display3">56sp</dimen>
+    <dimen name="material_text_display4">112sp</dimen>
+    <dimen name="button_corner">32dp</dimen>
+
+    <dimen name="image_width">120dp</dimen>
+    <dimen name="image_final_width">32dp</dimen>
+
+    <dimen name="activity_padding">16dp</dimen>
+    <dimen name="placeholder_image">50dp</dimen>
+    <dimen name="placeholder_text_height">8dp</dimen>
+    <dimen name="activity_padding_horizontal">16dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="name">15dp</dimen>
+    <dimen name="chef">12dp</dimen>
+    <dimen name="timestamp">11dp</dimen>
+    <dimen name="description">15dp</dimen>
+    <dimen name="price">13dp</dimen>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="website_url">http://pubbix.com/</string>
+    <string name="website_contact_url">http://pubbix.com/index.php?page=contact</string>
+    <string name="facebook_page_id">1528796280677970</string>
+    <string name="facebook_url">https://www.facebook.com/guslists/</string>
+    <string name="twitter_screen_name">guslists</string>
+    <string name="instagram_user_name">pubbix</string>
+    <string name="terms_and_conditions">http://pubbix.com/policies-p31</string>
+</resources>

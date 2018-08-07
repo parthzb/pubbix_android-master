@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/default_brick_content_padding">
+    <TextView
+        android:id="@+id/paragraph"
+        style="@android:style/TextAppearance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:lineSpacingExtra="8dp"
+        tools:text="@string/mission_statement"/>
+
+</LinearLayout>

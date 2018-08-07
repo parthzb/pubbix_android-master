@@ -1,0 +1,172 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.pubbix"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "ENDPOINT", "\"http://devpubbix.com/api/android/v1/\""
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4G"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    final PLAY_SERVICES_VERSION = '15.0.1'
+    final SUPPORT_LIBRARY_VERSION = '28.0.0-alpha1'
+    final CONSTRAINT_LAYOUT = '1.1.2'
+    final RETROFIT_VERSION = '2.4.0'
+    final OKHTTP_VERSION = '3.10.0'
+    final DAGGER_VERSION = '2.15'
+    final MOCKITO_VERSION = '1.10.19'
+    final JUNIT_VERSION = '4.12'
+    final BUTTER_KNIFE_VERSION = '8.8.1'
+    final REACTIVE_ANDROID = '2.0.1'
+    final REACTIVE_JAVA = '2.0.1'
+    final FACEBOOK_SDK = '[4,5)'
+    final TIMBER_VERSION = '4.6.0'
+    final GLIDE_VERSION = '4.6.1'
+    final GSON_VERSION = '2.8.0'
+    final MULTI_DEX_VERSION = '1.0.3'
+    final BRICKKIT_VERSION = '0.9.32'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation "junit:junit:$JUNIT_VERSION"
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    // Support Libraries
+    implementation "com.android.support:appcompat-v7:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:recyclerview-v7:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:design:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:support-v4:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:cardview-v7:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:support-annotations:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:support-vector-drawable:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:animated-vector-drawable:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:customtabs:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support.constraint:constraint-layout:$CONSTRAINT_LAYOUT"
+    implementation "com.android.support:preference-v7:$SUPPORT_LIBRARY_VERSION"
+
+    //Wayfair Brikkit
+    implementation "com.wayfair:brickkit-android:$BRICKKIT_VERSION"
+
+    //rest interactions
+    implementation "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
+    implementation "com.squareup.okhttp3:okhttp:$OKHTTP_VERSION"
+
+    //Gson
+    implementation "com.google.code.gson:gson:$GSON_VERSION"
+    implementation "com.squareup.retrofit2:converter-gson:$RETROFIT_VERSION"
+
+    //http logging
+    implementation "com.squareup.okhttp3:logging-interceptor:$OKHTTP_VERSION"
+
+    //injection
+
+    //Dagger 2
+    implementation "com.google.dagger:dagger:$DAGGER_VERSION"
+    kapt "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+
+    implementation "com.google.dagger:dagger-android:$DAGGER_VERSION"
+    implementation "com.google.dagger:dagger-android-support:$DAGGER_VERSION"
+    kapt "com.google.dagger:dagger-android-processor:$DAGGER_VERSION"
+
+    //Butterknife
+    implementation "com.jakewharton:butterknife:$BUTTER_KNIFE_VERSION"
+    kapt "com.jakewharton:butterknife-compiler:$BUTTER_KNIFE_VERSION"
+
+    //RxJava && RxAndroid
+    implementation "io.reactivex.rxjava2:rxjava:$REACTIVE_JAVA"
+    implementation "io.reactivex.rxjava2:rxandroid:$REACTIVE_ANDROID"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$RETROFIT_VERSION"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$GLIDE_VERSION"
+    kapt "com.github.bumptech.glide:compiler:$GLIDE_VERSION"
+
+    //facebook sdk
+    implementation "com.facebook.android:facebook-login:$FACEBOOK_SDK"
+
+    //Phone number
+    implementation 'net.rimoto:intlphoneinput:1.0.1'
+
+    //Timber logging tool
+    implementation "com.jakewharton.timber:timber:$TIMBER_VERSION"
+
+    //Circular Image view
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+
+    //Firebase core
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+
+    //Firebase Messaging
+    implementation 'com.google.firebase:firebase-messaging:17.0.0'
+
+    //Google
+    implementation "com.google.android.gms:play-services-auth:$PLAY_SERVICES_VERSION"
+
+    //Google Maps
+    implementation "com.google.android.gms:play-services-maps:$PLAY_SERVICES_VERSION"
+
+    //Google Location
+    //implementation "com.google.android.gms:play-services-location:$PLAY_SERVICES_VERSION"
+
+    //Google Location
+    implementation "com.google.android.gms:play-services-places:$PLAY_SERVICES_VERSION"
+
+    //Facebook Account kit
+    implementation 'com.facebook.android:account-kit-sdk:4.33.0'
+
+    //Facebook Shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.2.0'
+
+    //Bottom Navigation
+    implementation 'com.aurelhubert:ahbottomnavigation:2.1.0'
+
+    //Matisse & RxPermission
+    implementation 'com.zhihu.android:matisse:0.4.3'
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //MultiDex Support prior to Android 5.0
+    implementation "com.android.support:multidex:$MULTI_DEX_VERSION"
+
+    //
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+
+    //StoryView
+    implementation 'com.github.shts:StoriesProgressView:2.0.0'
+}
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'com.google.gms.google-services'

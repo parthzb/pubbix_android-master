@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "51669003520",
+    "firebase_url": "https://pubbix-ee698.firebaseio.com",
+    "project_id": "pubbix-ee698",
+    "storage_bucket": "pubbix-ee698.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51669003520:android:69f0aec36f0aa9c1",
+        "android_client_info": {
+          "package_name": "com.pubbix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51669003520-5v9odisg4l6mb14hletdqn81gbvnp7n1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pubbix",
+            "certificate_hash": "e9a86de27c425ccbc4bd216bb97b933223c91024"
+          }
+        },
+        {
+          "client_id": "51669003520-b1ftem8d6m1n9ajfh482oltvgll52su5.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "51669003520-b1ftem8d6m1n9ajfh482oltvgll52su5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7vqUINhQncbFPfZw4XJJCIj6vcsJC4FI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51669003520-b1ftem8d6m1n9ajfh482oltvgll52su5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

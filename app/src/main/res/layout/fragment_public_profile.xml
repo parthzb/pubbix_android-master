@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.pubbix.feature.home.profile.viewmodel.PublicProfileViewModel"/>
+    </data>
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="286dp"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginStart="40dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                app:titleEnabled="false">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:padding="@dimen/default_brick_content_padding"
+                    app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+
+
+                    <TextView
+                        android:id="@+id/user_full_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/circular_bold"
+                        android:singleLine="true"
+                        android:text="@{viewModel.fullName}"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Auguste Compaore"/>
+
+                    <TextView
+                        android:id="@+id/country"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@{viewModel.country}"
+                        android:textColor="@color/pubbixMainColor"
+                        android:textSize="@dimen/material_text_title"
+                        app:layout_constraintEnd_toStartOf="@+id/frameLayout2"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/user_full_name"
+                        tools:text="Burkina Faso"/>
+
+                    <FrameLayout
+                        android:id="@+id/frameLayout2"
+                        android:layout_width="136dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toEndOf="@+id/user_full_name"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_image"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            app:invalidationKey="@{viewModel.invalidationKey}"
+                            app:imageUrl="@{viewModel.profilePicture}"
+                            android:background="@drawable/profile_circular_border_imageview"
+                            tools:background="@drawable/profile_circular_border_imageview"
+                            tools:src="@drawable/auguste"/>
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/edit_profile"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="4dp"
+                            android:onClick="@{viewModel.onEditProfileButtonClicked}"
+                            android:background="@drawable/edit_pencil_circular_white_background"
+                            android:src="@drawable/ic_mode_edit_black_24dp"
+                            android:tint="@color/grey_500"/>
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/circular_book"
+                        android:text="Verified With"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/frameLayout2"/>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                        <ImageView
+                            android:id="@+id/verified_by_google"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_google_32"/>
+
+                        <ImageView
+                            android:id="@+id/verified_by_facebook"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_facebook_rounded_32"/>
+                    </LinearLayout>
+
+                    <android.support.design.button.MaterialButton
+                        android:id="@+id/build_trust"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center_vertical"
+                        android:text="Build Trust"
+                        android:textAlignment="center"
+                        android:textColor="@color/pubbixMainColor"
+                        android:textSize="16sp"
+                        app:backgroundTint="@android:color/transparent"
+                        app:cornerRadius="32dp"
+                        app:icon="@drawable/ic_protect_24"
+                        app:iconTint="@color/pubbixMainColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+                        app:rippleColor="@color/pubbixMainColor"
+                        app:strokeColor="@color/pubbixMainColor"
+                        app:strokeWidth="@dimen/spacing_stroke"/>
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_gravity="top"
+                    android:layout_marginBottom="48dp"
+                    android:elevation="7dp"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/htab_tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    app:tabIndicatorColor="@color/pubbixMainColor"
+                    app:tabSelectedTextColor="@color/pubbixMainColor"
+                    app:tabTextColor="@color/grey_500"/>
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/htab_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

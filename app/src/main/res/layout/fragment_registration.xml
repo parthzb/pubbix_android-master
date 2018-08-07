@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.pubbix.feature.onboarding.registration.viewmodel.RegistrationViewModel"/>
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:paddingTop="4dp"
+                    android:src="@drawable/ic_arrow_back_black_24dp"
+                    android:tint="@color/pubbixMainColor"
+                    android:onClick="@{viewModel.onBackButtonClicked}"/>
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    xmlns:app="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/circular_bold"
+                        android:text="@string/first_let_s_get_some_details_about_you"
+                        android:textColor="@color/pubbixMainColor"
+                        android:textSize="@dimen/material_text_headline"
+                        />
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/profile_circular_border_imageview"
+                        android:padding="5dp"
+                        android:src="@mipmap/profile"
+                        app:civ_border_color="#FF000000"
+                        android:onClick="@{viewModel.onProfilePictureSelected}"
+                        />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/inputLayoutFullName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp">
+
+                        <EditText
+                            android:id="@+id/full_name_Field"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/full_name"
+                            android:text="@{viewModel.fullName}"
+                            android:imeOptions="actionNext"
+                            android:nextFocusForward="@+id/emailField"
+                            android:inputType="textPersonName"
+                            android:textSize="24sp"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/inputLayoutEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp">
+                        <!--app:errorTextAppearance="@style/error_appearance">-->
+
+                        <EditText
+                            android:id="@+id/email_Field"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:hint="@string/email"
+                            android:text="@{viewModel.email}"
+                            android:imeOptions="actionDone"
+                            android:nextFocusForward="@+id/phoneNumberInputBox"
+                            android:inputType="textEmailAddress"
+                            android:textSize="24sp"
+                            />
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/registration_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            app:backgroundTint="@color/pubbixMainColor"
+            android:layout_margin="16dp"
+            app:fabSize="normal"
+            android:src="@mipmap/next_64"
+            android:onClick="@{viewModel.nextPageButtonClicked}"/>
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>
